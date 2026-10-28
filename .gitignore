@@ -1,0 +1,3 @@
+# Skill checkout + lockfile are local tooling, not repo content
+.agents/
+skills-lock.json
