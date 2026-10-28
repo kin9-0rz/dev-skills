@@ -1,50 +1,80 @@
-# Issue tracker: GitHub
+# Issue tracker: Local Markdown
 
-Issues and specs for this repo live as GitHub issues. Use the `gh` CLI for all operations.
+Issues and specs for this repo live as markdown files under `.scratch/`. This file is the only tracker contract; GitHub Issues is at most a read-only mirror and never carries claims, blocking edges, or answers.
 
-## Conventions
+## Layout
 
-- **Create an issue**: `gh issue create --title "..." --body "..."`. Use a heredoc for multi-line bodies.
-- **Read an issue**: `gh issue view <number> --json number,title,body,labels,comments`.
-- **List issues**: `gh issue list --state open --json number,title,body,labels,comments --jq '[.[] | {number, title, body, labels: [.labels[].name], comments: [.comments[].body]}]'` with appropriate `--label` and `--state` filters.
-- **Make an issue a sub-issue of a parent**: `gh issue create --parent <parent> ...`, or `gh issue edit <parent> --add-sub-issue <child>` afterwards (`gh` 2.94+). Older `gh`: `gh api --method POST repos/<owner>/<repo>/issues/<parent>/sub_issues -F sub_issue_id=<child-db-id>` (database id, as in **Blocking** below). Without sub-issues, put `Part of #<parent>` at the top of the child body.
-- **Blocking**: GitHub's **native issue dependencies**, the canonical, UI-visible representation. Add an edge with `gh issue create --blocked-by <n>,<n> ...` or `gh issue edit <child> --add-blocked-by <blocker>` (`gh` 2.94+). Older `gh`: `gh api --method POST repos/<owner>/<repo>/issues/<child>/dependencies/blocked_by -F issue_id=<blocker-db-id>`, where `<blocker-db-id>` is the blocker's numeric **database id** (`gh api repos/<owner>/<repo>/issues/<n> --jq .id`, _not_ the `#number` or `node_id`). Where dependencies aren't available, fall back to a `Blocked by: #<n>, #<n>` line at the top of the child body. A ticket is unblocked when every blocker is closed.
-- **Count open blockers**: `gh api repos/<owner>/<repo>/issues/<n> --jq .issue_dependencies_summary.blocked_by` (open blockers only; 0 means startable). `gh issue view <n> --json blockedBy` also lists closed blockers, so filter it: `--jq '[.blockedBy.nodes[] | select(.state == "OPEN")] | length'`.
-- **Comment on an issue**: `gh issue comment <number> --body "..."`
-- **Apply / remove labels**: `gh issue edit <number> --add-label "..."` / `--remove-label "..."`
-- **Close**: post the explanation with `gh issue comment <number> --body "..."`, then `gh issue close <number>`. On an already-closed issue, `gh issue close --comment` drops the comment and still exits 0.
+- One effort per directory: `.scratch/<effort>/`
+- Handoff spec: `.scratch/<effort>/spec.md` (six sections; see below)
+- Execution tickets: one file per ticket at `.scratch/<effort>/issues/NN-<slug>.md`, numbered from `01` in dependency order. Never a combined tickets file.
+- Decision requests: `.scratch/<effort>/requests/NN-<slug>.md`
+- Resume notes: `.scratch/<effort>/resume/NN.md`
+- Decision trail for work with no PR: `.scratch/<effort>/decision-trail.md`
+- Wayfinder maps: `.scratch/<effort>/map.md` with decision tickets under the same `issues/` directory.
 
-Infer the repo from `git remote -v`; `gh` does this automatically when run inside a clone.
+## Ticket fields
 
-File issues only into the user's own repo. Never file into `mattpocock/skills` (the repo these skills come from) unless the user owns it. In a fork, `gh` can default to the upstream parent, so before the first `gh issue create` of a session, check the target with `gh repo view --json nameWithOwner` and confirm it with the user if it is not their repo.
+Every execution ticket starts with:
 
-## Pull requests as a triage surface
+```markdown
+# <title>
 
-**PRs as a request surface: no.** _(Set to `yes` if this repo treats external PRs as feature requests; `/triage` reads this flag.)_
+Status: open
+Owner:
+Blocked by:
+PR:
+```
 
-When set to `yes`, PRs run through the same labels and states as issues, using the `gh pr` equivalents:
+`Owner:` is required from the claim onward. Execution tickets have no `Type:` line; `Type:` belongs only to wayfinder decision tickets (`research` / `prototype` / `grilling` / `task`).
 
-- **Read a PR**: `gh pr view <number>`, then `gh pr view <number> --comments` (off a TTY, `--comments` prints only the comments, not the body), and `gh pr diff <number>` for the diff.
-- **List external PRs for triage**: `gh api --paginate 'repos/{owner}/{repo}/pulls?state=open' --jq '.[] | select(.author_association | IN("OWNER","MEMBER","COLLABORATOR") | not) | {number, title, author: .user.login, author_association, labels: [.labels[].name]}'`.
-- **Comment / label / close**: `gh pr comment`, `gh pr edit --add-label`/`--remove-label`, `gh pr close`.
+## Spec fields
 
-GitHub shares one number space across issues and PRs, so a bare `#42` may be either: resolve with `gh pr view 42` and fall back to `gh issue view 42`.
+`spec.md` carries exactly these six numbered sections, plus `## 可选`, `## Spec changes`, and `## Self-check`:
+
+1. Goal and problem
+2. Scope (`### In` / `### Out`)
+3. Acceptance evidence: category, tier, check/command, required result
+4. Ticket graph table: id, title, blocking edges, single-ticket behavior
+5. Source pointers: tickets, `GLOSSARY.md`, ADRs, research branch
+6. Constraints: runtime prerequisites, interfaces/files that must not change, environment entry commands
+
+`## Self-check` maps every `### In` item to at least one ticket acceptance item.
+
+## State machine
+
+`open → claimed → resolved`.
+
+- **Frontier**: `Status: open`, empty `Owner:`, every `Blocked by` ticket resolved. First by number wins.
+- **Claim**: set `Status: claimed` and `Owner: <name>`, then commit on trunk: `claim: NN <slug>`. The file is the lock; a later session that sees an owner skips the ticket. Claim before any work.
+- **Resolve**: only after the artifact reached the agreed destination (PR merged, or the no-PR branch plus decision-trail receipt) and the receipt is present. Set `Status: resolved` and record the PR link in a trunk metadata commit.
+
+Resolved tickets stay resolved. Only a wrong resolve reopens one: set `Status: open`, clear `Owner:`, and move `## Answer` to `## Comments`.
+
+## Where writes go
+
+Tracker writes — claim, `Owner:`, `PR:`, status, decision requests, resume notes, decision trail — are metadata commits directly on trunk. A code branch contains zero `.scratch` files.
+
+The planning side writes ticket bodies. The execution side appends only `## Comments` pointers.
 
 ## When a skill says "publish to the issue tracker"
 
-Create a GitHub issue.
+- **Spec** → write `.scratch/<effort>/spec.md`.
+- **Tickets** → write one file per ticket under `.scratch/<effort>/issues/`, in dependency order.
+- **Decision request** → write `.scratch/<effort>/requests/NN-<slug>.md`, keep the ticket `claimed`, and leave `## Comments` as a pointer only.
+
+Do not create GitHub issues, apply triage labels, or post `ready-for-agent`.
 
 ## When a skill says "fetch the relevant ticket"
 
-Read it as in **Read an issue** above.
+Read the file at the referenced path, or resolve the number under `.scratch/<effort>/issues/`.
 
 ## Wayfinding operations
 
-Used by `/wayfinder`. The **map** is a single issue with **child** issues as tickets.
+Used by `wayfinder`. The map is a file with one child file per decision ticket.
 
-- **Map**: a single issue labelled `wayfinder:map`, holding the Notes / Decisions-so-far / Fog body. `gh issue create --label wayfinder:map`.
-- **Child ticket**: an issue linked to the map as a GitHub sub-issue (see **Make an issue a sub-issue of a parent**). Where sub-issues aren't enabled, add the child to a task list in the map body and put `Part of #<map>` at the top of the child body. Labels: `wayfinder:<type>` (`research`/`prototype`/`grilling`/`task`). Once claimed, the ticket is assigned to the driving dev.
-- **Blocking**: see **Blocking** under Conventions.
-- **Frontier query**: list the map's open children (`gh issue list --state open`, scoped to the map's sub-issues / task list), drop any with an open blocker (see **Count open blockers**, or an open issue in the `Blocked by` line) or an assignee; first in map order wins.
-- **Claim**: `gh issue edit <n> --add-assignee @me`, the session's first write.
-- **Resolve**: `gh issue comment <n> --body "<answer>"`, then `gh issue close <n>`, then append a context pointer (gist + link) to the map's Decisions-so-far.
+- **Map**: `.scratch/<effort>/map.md` with Notes, Decisions so far, and Fog sections.
+- **Decision ticket**: `.scratch/<effort>/issues/NN-<slug>.md` with a `Type:` line and a `Status:` line (`open` / `claimed` / `resolved`).
+- **Blocking**: `Blocked by: NN, NN`; unblocked when every listed ticket is resolved.
+- **Frontier**: open, unblocked, unclaimed; first by number.
+- **Claim**: `Status: claimed` plus `Owner:` and a claim commit.
+- **Resolve**: append `## Answer`, set `Status: resolved`, then append a gist plus link to the map's Decisions so far, all in one trunk metadata commit.

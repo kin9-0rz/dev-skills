@@ -1,13 +1,16 @@
+<!-- combo-workflow:begin -->
 ## Agent skills
+
+### Workflow
+
+Plan with `wayfinder` → `to-spec` → `to-tickets`; execute with `combo-execution`. Tracker writes are trunk metadata commits; code branches stay free of `.scratch`.
 
 ### Issue tracker
 
-Issues live in GitHub Issues for `kin9-0rz/dev-skills`, via the `gh` CLI. See `docs/agents/issue-tracker.md`.
-
-### Triage labels
-
-Default five-role vocabulary, each label string equal to its role name. See `docs/agents/triage-labels.md`.
+Local markdown under `.scratch/<effort>/`. Claim with `Status: claimed`, `Owner:`, and a commit. See `docs/agents/issue-tracker.md`.
 
 ### Domain docs
 
 Single-context: `GLOSSARY.md` at the repo root plus `docs/adr/`. See `docs/agents/domain.md`.
+<!-- combo-workflow:end -->
+

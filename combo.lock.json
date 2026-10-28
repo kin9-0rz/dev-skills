@@ -1,0 +1,451 @@
+{
+  "version": 1,
+  "upstreams": {
+    "matt": {
+      "repo": "mattpocock/skills",
+      "commit": "59db609eb1e18aaf59b63284d0e52255aff0c63c"
+    },
+    "pstack": {
+      "repo": "cursor/plugins",
+      "commit": "c742dd61706fbacc1b95f1a20b7b988cf096ce6c"
+    }
+  },
+  "skills": {
+    "grilling": {
+      "kind": "upstream",
+      "source": {
+        "repo": "matt",
+        "commit": "59db609eb1e18aaf59b63284d0e52255aff0c63c",
+        "path": "skills/productivity/grilling"
+      },
+      "sourceHash": "9bf67b08ee5ed213cb6dcfefd7446ab253a4ba936dd323b69211e3828df2825b",
+      "basedOn": null,
+      "installedHash": "9bf67b08ee5ed213cb6dcfefd7446ab253a4ba936dd323b69211e3828df2825b",
+      "installedFiles": {
+        "agents/openai.yaml": "1411d7df7d99b7e621a1ff8283c8133cc2464be63d064e52d8ce169c6800ee9b",
+        "SKILL.md": "befdff1e27a1dfe2a294d5871169ac1afe16d983911daa4f32627514a48c1e15"
+      }
+    },
+    "domain-modeling": {
+      "kind": "upstream",
+      "source": {
+        "repo": "matt",
+        "commit": "59db609eb1e18aaf59b63284d0e52255aff0c63c",
+        "path": "skills/engineering/domain-modeling"
+      },
+      "sourceHash": "78cd8e070c5517cec3577997f8dd79dfe57aeb6f9bd5f61f3208944700a9384b",
+      "basedOn": null,
+      "installedHash": "78cd8e070c5517cec3577997f8dd79dfe57aeb6f9bd5f61f3208944700a9384b",
+      "installedFiles": {
+        "ADR-FORMAT.md": "944c92aa790e8fbdc9199640b170979abb8a34ba8d0fe18c2a01a63bce140ca0",
+        "agents/openai.yaml": "f6bf2aa996c6e6f53fdd0708e18a0d16a56aed8322cca59fedbe3c0d2c75f06b",
+        "GLOSSARY-FORMAT.md": "21dcc40cdec8e151a829b98ab1517c1867bc444e3665134a98c6983411996801",
+        "SKILL.md": "7b925d7b1e341a2eeae33ad68a8a8c0ab889a38ddd22a7598e4c240e5a7556a3"
+      }
+    },
+    "wayfinder": {
+      "kind": "upstream",
+      "source": {
+        "repo": "matt",
+        "commit": "59db609eb1e18aaf59b63284d0e52255aff0c63c",
+        "path": "skills/engineering/wayfinder"
+      },
+      "sourceHash": "adf51c22232a8c1341c3338bd093824dbfe70e46301a072b362003cc881939fb",
+      "basedOn": null,
+      "installedHash": "adf51c22232a8c1341c3338bd093824dbfe70e46301a072b362003cc881939fb",
+      "installedFiles": {
+        "agents/openai.yaml": "88bc81a11a6d52ac67aeaa76b8b619e387020d47c5133a4dd4927fd15c4ad073",
+        "SKILL.md": "9be7b478c389605a24517d27752f278933588da97a1b5921b165f455edf4c5b7"
+      }
+    },
+    "research": {
+      "kind": "upstream",
+      "source": {
+        "repo": "matt",
+        "commit": "59db609eb1e18aaf59b63284d0e52255aff0c63c",
+        "path": "skills/engineering/research"
+      },
+      "sourceHash": "5d3d713492703b196ce8a048f1f8625583407fcb28254a38767da79da3ac76b0",
+      "basedOn": null,
+      "installedHash": "5d3d713492703b196ce8a048f1f8625583407fcb28254a38767da79da3ac76b0",
+      "installedFiles": {
+        "agents/openai.yaml": "9b4c470d63221c1f68f22df70b83e2f12401b317babe0d1b7b5f24a974474d0d",
+        "SKILL.md": "985569f15739c713d6784887c3d186d4ef9ac85bec5ad9c068d25bf0739928e4"
+      }
+    },
+    "code-review": {
+      "kind": "upstream",
+      "source": {
+        "repo": "matt",
+        "commit": "59db609eb1e18aaf59b63284d0e52255aff0c63c",
+        "path": "skills/engineering/code-review"
+      },
+      "sourceHash": "2a00dd7adac93d8dea50977b44f12cd7fccc2850e65a65d6d8e5ac14cf42451a",
+      "basedOn": null,
+      "installedHash": "2a00dd7adac93d8dea50977b44f12cd7fccc2850e65a65d6d8e5ac14cf42451a",
+      "installedFiles": {
+        "agents/openai.yaml": "8229ca854e11dc8e6aef2131ee03f31fb1561cf905fab9ccc325180cf3331352",
+        "SKILL.md": "09eb147f793e4647949edd32dbad278f0554dfb56e0d46b699cd4c2c55bf0357"
+      }
+    },
+    "diagnosing-bugs": {
+      "kind": "upstream",
+      "source": {
+        "repo": "matt",
+        "commit": "59db609eb1e18aaf59b63284d0e52255aff0c63c",
+        "path": "skills/engineering/diagnosing-bugs"
+      },
+      "sourceHash": "8512e84f2f3e7dc7a2853b6921a18dfe9268df7db195cdf0896136e29b79ed44",
+      "basedOn": null,
+      "installedHash": "8512e84f2f3e7dc7a2853b6921a18dfe9268df7db195cdf0896136e29b79ed44",
+      "installedFiles": {
+        "agents/openai.yaml": "3e430dbe4334a87597488c060cb3dc3786bb00c9182877d6f5ec41f62490e90b",
+        "scripts/hitl-loop.template.sh": "35103539fc36873eea36074769ad454f9379d6fc8b2dc0e26ce987fd3bfe5503",
+        "SKILL.md": "849198df88cdb65fd0d97236604c1fca7ff2f22d2f705f9724a800d0266b118d"
+      }
+    },
+    "writing-for-agents": {
+      "kind": "upstream",
+      "source": {
+        "repo": "matt",
+        "commit": "59db609eb1e18aaf59b63284d0e52255aff0c63c",
+        "path": "skills/productivity/writing-for-agents"
+      },
+      "sourceHash": "8b7445a7dd54a6be57c43fca59cf1ede430d654d1bc67414d87cbb75494bfa7b",
+      "basedOn": null,
+      "installedHash": "8b7445a7dd54a6be57c43fca59cf1ede430d654d1bc67414d87cbb75494bfa7b",
+      "installedFiles": {
+        "agents/openai.yaml": "eacb24b2a618cfb81dacb0416f4fdd75ddf3a8060f8ddb99aae1b1e301907e4b",
+        "SKILL-MECHANICS.md": "c768e6307c7c10728c401c213f2c4ba71c542127eeb7ad2956aabd15a0fa0059",
+        "SKILL.md": "551adca942227b44192edba88acd4e8db911f0121ce58ad16944ccf6a896a74a"
+      }
+    },
+    "handoff": {
+      "kind": "upstream",
+      "source": {
+        "repo": "matt",
+        "commit": "59db609eb1e18aaf59b63284d0e52255aff0c63c",
+        "path": "skills/productivity/handoff"
+      },
+      "sourceHash": "1a23f194fb8f91330d6398e4463916e818e4a564dae889cc23a086c4b3e79a54",
+      "basedOn": null,
+      "installedHash": "1a23f194fb8f91330d6398e4463916e818e4a564dae889cc23a086c4b3e79a54",
+      "installedFiles": {
+        "agents/openai.yaml": "5c479fd562c691851690e8b18c8501045bef0943c10743d636b2fae26add1d28",
+        "SKILL.md": "4cbb043950dad2ffd3662ff1a5a0b51ae676004b5cae10e3787e8ee7a4ee69d3"
+      }
+    },
+    "wizard": {
+      "kind": "upstream",
+      "source": {
+        "repo": "matt",
+        "commit": "59db609eb1e18aaf59b63284d0e52255aff0c63c",
+        "path": "skills/engineering/wizard"
+      },
+      "sourceHash": "de1f59871ab75546b5902ecb91613e2132cd91e1fbf26bc03d07849a289d750e",
+      "basedOn": null,
+      "installedHash": "de1f59871ab75546b5902ecb91613e2132cd91e1fbf26bc03d07849a289d750e",
+      "installedFiles": {
+        "agents/openai.yaml": "98f44d682d58e262f160dc59a8befc365e0aa65820dd0261864af26aa8e59d83",
+        "SKILL.md": "bdf31d48211ea559878f95a4f344aeabf8d85897488ba564382bab0b000daac1",
+        "template.sh": "6566f147299bc6f1d941e64591ed04385416d543e11f96f564c7228f5018d0ed"
+      }
+    },
+    "tdd": {
+      "kind": "override",
+      "source": {
+        "repo": "matt",
+        "commit": "59db609eb1e18aaf59b63284d0e52255aff0c63c",
+        "path": "skills/engineering/tdd"
+      },
+      "sourceHash": "5505d25bbaa8fc14a79e4d20163936958992a2995b7f1dd1d6197edc9ed722e0",
+      "basedOn": "5505d25bbaa8fc14a79e4d20163936958992a2995b7f1dd1d6197edc9ed722e0",
+      "installedHash": "864d65a36194b8deb93ade4b3750b946a34f4dc929f10919cb47a6128116e015",
+      "installedFiles": {
+        "agents/openai.yaml": "ea6f01cf1b8c06a4b0f5b649d74b1b8ce8685e72af1b38d70d877693e092af0b",
+        "mocking.md": "3ceb807fdf4a47d6a93d4d9a891e5ba6d362a6247bd08adc451feebfc17361ef",
+        "SKILL.md": "51cbb061385880afbed33bcde1af1e570b5085e24f767967a3d5aa8b1b009899",
+        "tests.md": "859f9e592c188fda4fc7277dd180e4ce9c7a2e13f6efe1f6f29eccc9d28c106a"
+      }
+    },
+    "to-spec": {
+      "kind": "override",
+      "source": {
+        "repo": "matt",
+        "commit": "59db609eb1e18aaf59b63284d0e52255aff0c63c",
+        "path": "skills/engineering/to-spec"
+      },
+      "sourceHash": "43ad9cf318e5e7d3d1fa360253a37021796dc87a0c2e595ad262661a10f85088",
+      "basedOn": "43ad9cf318e5e7d3d1fa360253a37021796dc87a0c2e595ad262661a10f85088",
+      "installedHash": "f1914bd5be82b64060cea4305f7f09dc0241556c75534280465598b77b592613",
+      "installedFiles": {
+        "agents/openai.yaml": "1c5b4d1e3d8e52287ef19cc2742fdbbfae1914ac75d33af3e4c8174f08cc55bb",
+        "SKILL.md": "2cf845762af9fcecb20b2591bcc00ef3f2b113919adc81b2cf1b8f8a4fd4f542"
+      }
+    },
+    "to-tickets": {
+      "kind": "override",
+      "source": {
+        "repo": "matt",
+        "commit": "59db609eb1e18aaf59b63284d0e52255aff0c63c",
+        "path": "skills/engineering/to-tickets"
+      },
+      "sourceHash": "56ec23c5b2782785d4e65bff9e315b6d3aeb4ef977c174a219e99489fada1995",
+      "basedOn": "56ec23c5b2782785d4e65bff9e315b6d3aeb4ef977c174a219e99489fada1995",
+      "installedHash": "8e3ef5081308fef462996755c413fc90645cf974f4d5408072f58abb9af7d8ec",
+      "installedFiles": {
+        "agents/openai.yaml": "21bc6215fffcd7614e9f772bb1760e87cc5fc7dcc707e7d282bc9414267a6090",
+        "SKILL.md": "9eff9600f586e2a9939c747adce9a7d6ce4a685945fa35c248ad75628624f1ef"
+      }
+    },
+    "how": {
+      "kind": "upstream",
+      "source": {
+        "repo": "pstack",
+        "commit": "c742dd61706fbacc1b95f1a20b7b988cf096ce6c",
+        "path": "harness/pstack/claude-code/skills/how"
+      },
+      "sourceHash": "c31bda9d4fb927ce6688950cb63ca42a6ebea400bdbbaf2de20c370b1eb0c156",
+      "basedOn": null,
+      "installedHash": "c31bda9d4fb927ce6688950cb63ca42a6ebea400bdbbaf2de20c370b1eb0c156",
+      "installedFiles": {
+        "references/explainer-prompt.md": "ddb89cebefc24e2b54517a331aedfe045b6971e101f45c71b8cef4cccff45bff",
+        "references/explorer-prompt.md": "6300128385ee940fd42ecb84b0e623435440a2dc283eae54ee4a52ba56947ba1",
+        "SKILL.md": "f2aad836aa83cac7385e734ab888d573e1736def5b061aa8a72b1717f085606c"
+      }
+    },
+    "why": {
+      "kind": "upstream",
+      "source": {
+        "repo": "pstack",
+        "commit": "c742dd61706fbacc1b95f1a20b7b988cf096ce6c",
+        "path": "harness/pstack/claude-code/skills/why"
+      },
+      "sourceHash": "7e328c4842b88ae6faa634e3339b71841ffdabe1b2adbcec837b062fc52361b2",
+      "basedOn": null,
+      "installedHash": "7e328c4842b88ae6faa634e3339b71841ffdabe1b2adbcec837b062fc52361b2",
+      "installedFiles": {
+        "references/epistemics.md": "d54a2361b2d5973bc3fe2edf62f446d87935974d4b40d47f23b9529f956ca758",
+        "references/investigator-prompt.md": "c44afba186f899094f3694e6c9d6de5d14ff7c4ce28b787a9f50fc789c9a7fc3",
+        "references/source-playbook.md": "9ae9dcb9d09111c9facc68510331c5aba4aed9b1b057314ff1fc0e166ad3993a",
+        "references/sources/code-archaeology.md": "a4a3970e9db448054aed676f3f7feeee667b4b69f0bd57c8fd72b751be687cc7",
+        "references/sources/databricks.md": "236ede7aab6454662a992db088a5393537a5233a4c26719c93188f9e174488f6",
+        "references/sources/datadog.md": "b139faac5dc11b8f26c8255dce6033c1a6ac143b038d3dd103f2034c5dbec9cd",
+        "references/sources/incident-postmortem.md": "bf2661f1a81c37700884a45b77d6289be0c802b065febced31990e6564510839",
+        "references/sources/linear.md": "01304e7f1badfcfb78babbb0edcadeb3cc8dd3f713793420cdff24ba190f907c",
+        "references/sources/notion.md": "3bcfa695c49dfad4ac036d5d7181c12585f55ac04f1936198d16ab75a2788997",
+        "references/sources/sentry.md": "2d4f83048eac1df530b399e2aed75dd7c9c18577b7665420aaeb96d0ceb0b702",
+        "references/sources/slack.md": "3bc6309f5c7b26ace3b919dbd7f7b048861dd2020f910fe24f656cc74b3b661c",
+        "references/synthesizer-prompt.md": "11c62671aa7b7a6e3d36929ffe2b59bf95e6ca664eee4d93e6ee527dd3390ddb",
+        "SKILL.md": "09405adc5afda90841f16318e471f25329d17da908956d79973edb34cdccb188"
+      }
+    },
+    "interrogate": {
+      "kind": "upstream",
+      "source": {
+        "repo": "pstack",
+        "commit": "c742dd61706fbacc1b95f1a20b7b988cf096ce6c",
+        "path": "harness/pstack/claude-code/skills/interrogate"
+      },
+      "sourceHash": "cd31daa5a79772e121b121ae54b999e54f7d9aefa6f2e933cf73198757113537",
+      "basedOn": null,
+      "installedHash": "cd31daa5a79772e121b121ae54b999e54f7d9aefa6f2e933cf73198757113537",
+      "installedFiles": {
+        "SKILL.md": "41358b680e1d585ee35f2b58d93e11eda8c02e3f1c5f5b50c565a173d8e37eed"
+      }
+    },
+    "no-comments": {
+      "kind": "upstream",
+      "source": {
+        "repo": "pstack",
+        "commit": "c742dd61706fbacc1b95f1a20b7b988cf096ce6c",
+        "path": "harness/pstack/claude-code/skills/no-comments"
+      },
+      "sourceHash": "eff5cb9739cd0255f4515f52ea177bce125cf5d9bbd839023053e057485613f7",
+      "basedOn": null,
+      "installedHash": "eff5cb9739cd0255f4515f52ea177bce125cf5d9bbd839023053e057485613f7",
+      "installedFiles": {
+        "SKILL.md": "52e05eb2578f7316421be8174430c1fd2c17bf5d6ac57d9e6a1c452b98d3a570"
+      }
+    },
+    "technical-writing": {
+      "kind": "upstream",
+      "source": {
+        "repo": "pstack",
+        "commit": "c742dd61706fbacc1b95f1a20b7b988cf096ce6c",
+        "path": "harness/pstack/claude-code/skills/technical-writing"
+      },
+      "sourceHash": "fbed4012b03c897004889f1da04acff3bd446b4a696b3d66ece85f561881f6ab",
+      "basedOn": null,
+      "installedHash": "fbed4012b03c897004889f1da04acff3bd446b4a696b3d66ece85f561881f6ab",
+      "installedFiles": {
+        "SKILL.md": "f52de47ccac67a713d5cb5d8bd5dc525ee8f624507d31a804e37efa339038430"
+      }
+    },
+    "unslop": {
+      "kind": "upstream",
+      "source": {
+        "repo": "pstack",
+        "commit": "c742dd61706fbacc1b95f1a20b7b988cf096ce6c",
+        "path": "harness/pstack/claude-code/skills/unslop"
+      },
+      "sourceHash": "54884a77ad1a7f9c2c4c7efe4d04de4ca250626aa20214cc41dd7fd35fbe9ce7",
+      "basedOn": null,
+      "installedHash": "54884a77ad1a7f9c2c4c7efe4d04de4ca250626aa20214cc41dd7fd35fbe9ce7",
+      "installedFiles": {
+        "SKILL.md": "ccab208e315ce05e2fab8eeee2f7879f1289b5c6844840b2d307adf31c79144f"
+      }
+    },
+    "benchmark-checklist": {
+      "kind": "upstream",
+      "source": {
+        "repo": "pstack",
+        "commit": "c742dd61706fbacc1b95f1a20b7b988cf096ce6c",
+        "path": "harness/pstack/claude-code/skills/benchmark-checklist"
+      },
+      "sourceHash": "ad80a430e33509171745de6a69193763918b378e711888441bf404a60eb80a7a",
+      "basedOn": null,
+      "installedHash": "ad80a430e33509171745de6a69193763918b378e711888441bf404a60eb80a7a",
+      "installedFiles": {
+        "SKILL.md": "ba109e96c8f6c1c391baccf19e5d11e14370df7b3f2605e1572cd565a6c0fca0"
+      }
+    },
+    "prototype": {
+      "kind": "port",
+      "source": {
+        "repo": "pstack",
+        "commit": "c742dd61706fbacc1b95f1a20b7b988cf096ce6c",
+        "path": "harness/pstack/claude-code/skills/poteto-mode/playbooks/prototype.md"
+      },
+      "sourceHash": "7aa1f52c691c3d46d5afc527b23f90977fce869ce33573c73c81a4c7f0cde962",
+      "basedOn": "7aa1f52c691c3d46d5afc527b23f90977fce869ce33573c73c81a4c7f0cde962",
+      "installedHash": "fe82d40e2a7ca908825ece53781ad08823b96e7da2b986c25759fdd636910415",
+      "installedFiles": {
+        "LOGIC.md": "f61c7d249e786a79ef289018901c348271e1798dd0b0bc5607b5c6f4d4a01ab9",
+        "SKILL.md": "a4ec0cc7eff0ca11003fab50b114da2d5f7e5073aec741cb1335043800d1ee77",
+        "UI.md": "723211e878acbc7b6ff09755263f3295cde724ba902ff0064da41eed51d45ad3"
+      }
+    },
+    "bug-fix": {
+      "kind": "port",
+      "source": {
+        "repo": "pstack",
+        "commit": "c742dd61706fbacc1b95f1a20b7b988cf096ce6c",
+        "path": "harness/pstack/claude-code/skills/poteto-mode/playbooks/bug-fix.md"
+      },
+      "sourceHash": "66e26542dad131cfd7df80ac0cdf81ed4d85e7b5e3f0eb65b933888760c4831f",
+      "basedOn": "66e26542dad131cfd7df80ac0cdf81ed4d85e7b5e3f0eb65b933888760c4831f",
+      "installedHash": "05a793a9a481a44c334670cb908076ec26c07b96ec03f1110c4f468a44b8ac98",
+      "installedFiles": {
+        "SKILL.md": "3925269030734fb19972c6578845570c53f6220ce54001c99e4eff7726e453b6"
+      }
+    },
+    "pause-safely": {
+      "kind": "port",
+      "source": {
+        "repo": "pstack",
+        "commit": "c742dd61706fbacc1b95f1a20b7b988cf096ce6c",
+        "path": "harness/pstack/claude-code/skills/poteto-mode/playbooks/pause-safely.md"
+      },
+      "sourceHash": "77968cfe5f4a71a8cd33e0ae8ffcdbd88dd693a212c240457773e6c40c96c21d",
+      "basedOn": "77968cfe5f4a71a8cd33e0ae8ffcdbd88dd693a212c240457773e6c40c96c21d",
+      "installedHash": "51a7c51d03c02f560395c3fa7d59450b25df5ad600352aeacc83fe06663cc765",
+      "installedFiles": {
+        "SKILL.md": "819d4b0f9ce0ac304ebdc90b775f9f7cce9c4e26c4bae9530ec591cf1f00612a"
+      }
+    },
+    "session-pickup": {
+      "kind": "port",
+      "source": {
+        "repo": "pstack",
+        "commit": "c742dd61706fbacc1b95f1a20b7b988cf096ce6c",
+        "path": "harness/pstack/claude-code/skills/poteto-mode/playbooks/session-pickup.md"
+      },
+      "sourceHash": "d194f2a7ef392c1598ef3f0e3b561370ca25c2c7a78308007af4aa46ada8ee12",
+      "basedOn": "d194f2a7ef392c1598ef3f0e3b561370ca25c2c7a78308007af4aa46ada8ee12",
+      "installedHash": "677a0017cfaaf1d31dab0f50c736c6c0b402d8f873a0ee0af1258910a4104cd8",
+      "installedFiles": {
+        "SKILL.md": "6cdf4929047ccc677182b33ec6bb1aadc091ef04e19aa90a52572b93355f9afe"
+      }
+    },
+    "opening-a-pr": {
+      "kind": "port",
+      "source": {
+        "repo": "pstack",
+        "commit": "c742dd61706fbacc1b95f1a20b7b988cf096ce6c",
+        "path": "harness/pstack/claude-code/skills/poteto-mode/playbooks/opening-a-pr.md"
+      },
+      "sourceHash": "b22b7ad7cd102b99d334f4399ae1dba78e0aaf4bee2d5241fda71753c7ce48f9",
+      "basedOn": "b22b7ad7cd102b99d334f4399ae1dba78e0aaf4bee2d5241fda71753c7ce48f9",
+      "installedHash": "4663912e41d104595b385b3fac90110e5ad130b94002bae4a37ce77de99618a7",
+      "installedFiles": {
+        "SKILL.md": "218963bbb14de0e927bb99f8d058d52ddf26bda0c55ecf2190ed3b2ded02d6f3"
+      }
+    },
+    "trace-forensics": {
+      "kind": "port",
+      "source": {
+        "repo": "pstack",
+        "commit": "c742dd61706fbacc1b95f1a20b7b988cf096ce6c",
+        "path": "harness/pstack/claude-code/skills/poteto-mode/playbooks/trace-forensics.md"
+      },
+      "sourceHash": "ef0bbf79856a4ae1a8993d54c1a1da159cb97623941b652c0069cf75a017e0f5",
+      "basedOn": "ef0bbf79856a4ae1a8993d54c1a1da159cb97623941b652c0069cf75a017e0f5",
+      "installedHash": "e86cdf13a371da62cf0fbb15caee5a665a5d79796fa1c25cc4112eb80dd80cff",
+      "installedFiles": {
+        "SKILL.md": "15a086a438ea6c9975b5973a8368dea2208aaff4b78f60980a337261f0513ae2"
+      }
+    },
+    "runtime-forensics": {
+      "kind": "port",
+      "source": {
+        "repo": "pstack",
+        "commit": "c742dd61706fbacc1b95f1a20b7b988cf096ce6c",
+        "path": "harness/pstack/claude-code/skills/poteto-mode/playbooks/runtime-forensics.md"
+      },
+      "sourceHash": "3463372b578c28f27c236f2627f09b5c5b1e85e86db7399fb984f3892fb450f5",
+      "basedOn": "3463372b578c28f27c236f2627f09b5c5b1e85e86db7399fb984f3892fb450f5",
+      "installedHash": "571108c5663ea24d64e183e59142a2296ed26c1a2aa13071615c217aae8ed9c5",
+      "installedFiles": {
+        "SKILL.md": "4ae08f69ffa62e5dbfc334b19d4c3f07a57c7cd909f3928344163e9efb41784a"
+      }
+    },
+    "combo-execution": {
+      "kind": "local",
+      "source": null,
+      "sourceHash": null,
+      "basedOn": null,
+      "installedHash": "e4e4d5891828546ce71f05ae67452a0a9b695795d56b895cf7851d3bc0ccf028",
+      "installedFiles": {
+        "SKILL.md": "204415a6fe7f2220bbeefaa4850e9778e51ca752aed3bbb16a951604645e1050"
+      }
+    }
+  },
+  "agents": {
+    "root": {
+      "path": ".omp/agents/root.md",
+      "hash": "55ef6f23fde0ce4997bc455dd96911190e9b934376986a452ce5f370d63d77bc"
+    },
+    "owner": {
+      "path": ".omp/agents/owner.md",
+      "hash": "955b11f58fd98269734dc5d36b6edf4dc28a9728704cb3162e60fb9b90a1c78d"
+    },
+    "verifier": {
+      "path": ".omp/agents/verifier.md",
+      "hash": "0fc755bf0a3287ab357927e680fb4b5608aa6d1ef35655cd167bfd060a62bf50"
+    },
+    "comment-sicko": {
+      "path": ".omp/agents/comment-sicko.md",
+      "hash": "d76bdc2386198ceaf3a016089aa33af7129ce56ce1a92eb5bcf81f4e3898610d"
+    }
+  },
+  "docs": {
+    "docs/agents/issue-tracker.md": {
+      "hash": "513da7c445033ef840758571e31cae59525fe0f27708324d0fd70b528604ccc0"
+    },
+    "docs/agents/domain.md": {
+      "hash": "7dcbd9c96877211a0d917fe4a4927458728cce21938a81455561a61c327c5e3c"
+    }
+  },
+  "agentsBlockHash": "1540fd3bfa7d3c83129cc5d2438d489cfdd7d292e92785763e58492cae9e2544"
+}
